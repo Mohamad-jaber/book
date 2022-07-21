@@ -17,6 +17,12 @@ input,textarea{
     margin:10px 0;
 }
 
+/* .img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} */
 
 .curd-title{
     text-transform: capitalize;

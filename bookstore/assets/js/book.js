@@ -11,7 +11,7 @@ var arrivalsContainer = document.getElementById('arrivals');
 
 let arrivalsArray =[
     arrivalObjcet ={
-        category:"fantacy",
+        category:"fantasy",
         arrivalsImg: "assets/images/books_cause.png",
         Author:"MICHAEL ALICE",
         Title:"Books For a Cause",
@@ -59,7 +59,7 @@ let arrivalsArray =[
         OldPrice:"700"
     },
     arrivalObjcet ={
-        category:"fantacy",
+        category:"fantasy",
         arrivalsImg: "./assets/images/stars.png",
         Author:"Alice James",
         Title:"When The Stars Align",
@@ -67,7 +67,7 @@ let arrivalsArray =[
         OldPrice:""
     },
     arrivalObjcet ={
-        category:"fantacy",
+        category:"fantasy",
         arrivalsImg: "./assets/images/structures.png",
         Author:"MICHAEL ALICE",
         Title:"Beauty of Structures",
@@ -75,7 +75,7 @@ let arrivalsArray =[
         OldPrice:""
     },
     arrivalObjcet ={
-        category:"fantacy",
+        category:"fantasy",
         arrivalsImg: "assets/images/visit_north.png",
         Author:"Adam Baid",
         Title:"Vistit in the North",
@@ -83,7 +83,7 @@ let arrivalsArray =[
         OldPrice:"700"
     },
     arrivalObjcet ={
-        category:"fantacy",
+        category:"fantasy",
         arrivalsImg: "assets/images/wake_me_up.png",
         Author:"John Erik",
         Title:"Wake Me up",
@@ -186,7 +186,7 @@ cook.addEventListener("click", ()=>{
             <h5 class="author">${arrivalsArray[i].Author}</h5>
             <h4 class="card-title">${arrivalsArray[i].Title}</h4>
             <div class="prices">
-            <p class="price">${arrivalsArray[i].price || ''}$ </p>
+            <p class="price">${arrivalsArray[i].Price || ''}$ </p>
             <del>${`${arrivalsArray[i].OldPrice} ${arrivalsArray[i].OldPrice?'$' : ''}`  }</del>
             </div>
             </div>
@@ -211,7 +211,7 @@ fantacy.addEventListener("click", ()=>{
     arrivalsContainer.innerHTML = '';
     content = ``;
     for(let i =0; i < arrivalsArray.length; i++){
-        if(arrivalsArray[i].category == "fantacy"){
+        if(arrivalsArray[i].category == "fantasy"){
             content += `
             <div class="card">
             <div class="img-icons">
@@ -229,7 +229,7 @@ fantacy.addEventListener("click", ()=>{
             <h5 class="author">${arrivalsArray[i].Author}</h5>
             <h4 class="card-title">${arrivalsArray[i].Title}</h4>
             <div class="prices">
-            <p class="price">${arrivalsArray[i].price || ''}$ </p>
+            <p class="price">${arrivalsArray[i].Price || ''}$ </p>
             <del>${`${arrivalsArray[i].OldPrice} ${arrivalsArray[i].OldPrice?'$' : ''}`  }</del>
             </div>
             </div>
