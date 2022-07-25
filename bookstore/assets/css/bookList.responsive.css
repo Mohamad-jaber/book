@@ -19,7 +19,9 @@
     #edit {
         margin-right: 0px
     }
-    
+    .img-container {
+        width: 10%;
+    }
     .price {
         width: 15%;
     }

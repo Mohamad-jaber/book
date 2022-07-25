@@ -6,8 +6,17 @@ var other = document.getElementById('other');
 var content = '';
 var books = JSON.parse(localStorage.getItem('arrivals'));
 var arrivalsContainer = document.getElementById('arrivals');
+let authoor = localStorage.getItem("authors") ; 
 
-
+if (localStorage.getItem("authors")!=null ) {
+    authoor = JSON.parse(localStorage.getItem("authors"));
+    // displayDataInTable();
+    displayData();
+} else {
+    // localStorage.setItem("authors", JSON.stringify(authors));
+    // displayDataInTable();
+    displayData();
+}
 
 let arrivalsArray =[
     arrivalObjcet ={
@@ -163,6 +172,8 @@ function display(){
 
 
 
+
+
 //function that filters the cooking books 
 cook.addEventListener("click", ()=>{
     arrivalsContainer.innerHTML = '';
@@ -239,3 +250,28 @@ fantacy.addEventListener("click", ()=>{
     }
     arrivalsContainer.innerHTML = content;
 })
+
+
+// function displayAuthor() {
+//     if (page == "authors.html") {
+//         console.log("a");
+//     } else {
+//         console.log("b")
+//         let result = '';
+//         for (let i = 0; i < authoor.length; i++) {
+//             result += `
+//             <div class="teamM text-center  w-25">
+//                 <div class="services-img-div m-auto">
+//                 <img src="${authoor[i].image}" alt="${authoor[i].Name}" class="services-img" >
+//                 </div>
+//                 <p class="table_title text-center text-uppercase lightGrey mt-4">${authoor[i].Title}</p>
+//                 <h3 class="table_name text-capitalize">${authoor[i].Name}</h3>
+//                 <p class="table_info text-capitalize ">${authoor[i].AuthorInfo}</p>
+//             </div>
+//             `
+//         }
+//         theTeamDiv.innerHTML = result;
+//         localStorage.setItem("authors", JSON.stringify(authoor));
+//     }
+
+// }

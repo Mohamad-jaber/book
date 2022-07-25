@@ -69,7 +69,7 @@ inputFileSelector.onclick = () => {
 // displayDataInTable();
 
 
-if (localStorage.getItem("authors")) {
+if (localStorage.getItem("authors")!=null ) {
     authors = JSON.parse(localStorage.getItem("authors"));
     displayDataInTable();
     displayData();
@@ -83,6 +83,7 @@ addBtn.addEventListener("click", () => {
     if (addBtn.innerHTML == "update Author") {
         displayDataInTable();
         updateRow();
+        addBtn.setAttribute = "disabled", "true";
     } else {
         addAuthor();
         displayDataInTable();
@@ -159,6 +160,8 @@ function getAuthorsData(i) {
     authorName.value = authors[i].Name;
     authorInfo.value = authors[i].AuthorInfo;
     tabelIndex = i;
+    addBtn.removeAttribute("disabled");
+
 }
 function updateRow() {
     if (img == undefined) {
@@ -172,9 +175,13 @@ function updateRow() {
         authors[tabelIndex].image = img;
     }
     clearInputs();
+    localStorage.setItem("authors", JSON.stringify(authors));
     displayDataInTable();
     displayData();
     addBtn.innerHTML = "Add author";
+    
+    disabledOrNot();
+
 }
 function clearInputs() {
     for (let i = 0; i < inputs.length; i++) {
@@ -183,11 +190,13 @@ function clearInputs() {
 
     title.classList.remove('is-valid');
     authorName.classList.remove('is-valid');
+    addBtn.setAttribute("disabled","true");
 }
 function displayData() {
     if (page == "authors.html") {
-
+        
     } else {
+        
         let result = '';
         for (let i = 0; i < authors.length; i++) {
             result += `
