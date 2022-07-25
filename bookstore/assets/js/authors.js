@@ -83,7 +83,7 @@ addBtn.addEventListener("click", () => {
     if (addBtn.innerHTML == "update Author") {
         displayDataInTable();
         updateRow();
-        addBtn.setAttribute = "disabled", "true";
+        // addBtn.setAttribute = "disabled", "true";
     } else {
         addAuthor();
         displayDataInTable();
@@ -91,12 +91,12 @@ addBtn.addEventListener("click", () => {
         clearInputs();
 
     }
+    localStorage.setItem("authors", JSON.stringify(authors));
     titleCheck = false;
     NameCheck = false;
     disabledOrNot();
 
 
-    localStorage.setItem("authors", JSON.stringify(authors));
 })
 
 imgFiles.addEventListener("change", function () {
@@ -282,7 +282,7 @@ function disabledOrNot() {
         addBtn.removeAttribute("disabled");
 
     } else {
-        addBtn.setAttribute = "disabled", "true";
+        addBtn.setAttribute("disabled","true");
     }
 }
 
